@@ -10,25 +10,28 @@ import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.openqa.selenium.WebDriver;
 
 @TestInstance(Lifecycle.PER_CLASS)
-public class SeleniumTest {
+public class WithConfigurationTest {
 
   private BrowserGetter browserGetter = new BrowserGetter();
   private WebDriver driver;
 
+  @
+
   @BeforeAll
   public void beforeAll() {
-    driver = browserGetter.getChromeDriver();
+    driver = browserGetter.getDriver();
+
   }
 
   @Test
-  public void openThePageAndCheckTheTitle() {
-    String expectedTitle = "Example title";
+  public void justATest() {
     driver.get("https://www.example.com");
-    assertEquals(expectedTitle, driver.getTitle());
+    assertEquals(driver.getTitle(), "Example domain");
   }
 
   @AfterAll
   public void afterAll() {
     driver.quit();
   }
+
 }
