@@ -15,8 +15,6 @@ public class WithConfigurationTest {
   private BrowserGetter browserGetter = new BrowserGetter();
   private WebDriver driver;
 
-  @
-
   @BeforeAll
   public void beforeAll() {
     driver = browserGetter.getDriver();
